@@ -4,7 +4,6 @@ import sqlite3
 ebookstore = sqlite3.connect("ebookstore.db")
 cursor = ebookstore.cursor()
 
-# Dictionary of the table column names.
 book_table_columns = {1:"id", 2:"title", 3:"author", 4:"qty"}
 
 
@@ -38,7 +37,7 @@ def new_book():
     max_value_object = cursor.execute("""SELECT MAX(id) FROM book""")
     new_id = ""
     for id in max_value_object:  # Gets the number from the object.
-        new_id = id[0] + 1  # Takes the max id and adds 1 to it.
+        new_id = id[0] + 1 
     try: # Adds the new book to the database.
         cursor.execute("""INSERT INTO book(id, title, author, qty) VALUES
                        (?,?,?,?)""", (new_id, book_name, book_author, qty))
@@ -98,7 +97,7 @@ def update_book():
                     print("\nSorry I don't think that's a valid input, "
                           "please enter an integer.")
                     continue
-                if update_value >= 0:  # Checks number is positive.
+                if update_value >= 0: 
                     break
                 else:
                     print("Sorry you can't have a negative number, please "
