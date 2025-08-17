@@ -7,7 +7,7 @@ cursor = ebookstore.cursor()
 book_table_columns = {1:"id", 2:"title", 3:"author", 4:"qty"}
 
 
-def new_book():
+def add_new_book():
     """ Adds a new book to the book table in the ebookstore database.
 
     Adds a new book to the book table. Asks the user for the book
@@ -274,7 +274,7 @@ while True:
         print("Sorry you need to enter a integer.")
         continue
     if option == 1:
-        new_book()
+        add_new_book()
     elif option == 2:
         update_book()
     elif option == 3:
